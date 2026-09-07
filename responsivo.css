@@ -1,0 +1,221 @@
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+
+/* =========================
+   TABLETS
+   ========================= */
+
+@media (max-width: 900px) {
+
+    header nav {
+        flex-direction: column;
+        padding: 18px 0;
+    }
+
+
+    header nav > ul {
+        flex-wrap: wrap;
+    }
+
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+
+    .hero-text {
+        max-width: 750px;
+        margin: auto;
+    }
+
+
+    .acoes {
+        justify-content: center;
+    }
+
+
+    .hero-imagem {
+        max-width: 360px;
+    }
+
+
+    .sobre-grid,
+    .multimedia-grid,
+    .cards-2 {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cards-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================
+   TELEMÓVEIS
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+
+    header nav {
+        width: 94%;
+    }
+
+
+    header nav > ul {
+        gap: 4px;
+    }
+
+
+    header nav > ul > li > a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+
+    .hero {
+        width: 94%;
+        min-height: auto;
+        padding: 45px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+
+    .hero-subtitulo {
+        font-size: 1.05rem;
+    }
+
+
+    .hero-imagem {
+        max-width: 300px;
+    }
+
+
+    .circulo-decorativo {
+        width: 75px;
+        height: 75px;
+        right: -10px;
+    }
+
+
+    .secao {
+        width: 94%;
+        padding: 50px 0;
+    }
+
+
+    .pagina-topo {
+        width: 94%;
+        padding: 50px 0 30px;
+    }
+
+
+    .estatisticas,
+    .cards-3,
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cartao,
+    .hobby,
+    .projeto-conteudo {
+        padding: 23px;
+    }
+
+
+    .lista-horizontal {
+        display: block;
+    }
+
+
+    .lista-horizontal li {
+        margin-bottom: 8px;
+    }
+
+
+    .footer-grid {
+        width: 94%;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+
+    .copyright {
+        width: 94%;
+    }
+
+
+    .acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .botao {
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   TELEMÓVEIS PEQUENOS
+   ========================= */
+
+@media (max-width: 400px) {
+
+    header nav > ul > li > a {
+        padding: 7px 8px;
+        font-size: 0.78rem;
+    }
+
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+
+    .etiqueta {
+        font-size: 0.7rem;
+    }
+
+
+    .hero-imagem {
+        max-width: 250px;
+    }
+
+
+    .estatistica strong {
+        font-size: 2.4rem;
+    }
+
+}
