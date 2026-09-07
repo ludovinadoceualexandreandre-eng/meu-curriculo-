@@ -1,0 +1,446 @@
+/* =========================================================
+   ESTILO PRINCIPAL
+   Currículo e Portfólio - Ludovina
+   ========================================================= */
+
+:root {
+    --creme: #f7f1e8;
+    --branco: #ffffff;
+    --castanho: #2b211b;
+    --castanho-2: #49372b;
+    --dourado: #c8a66a;
+    --dourado-claro: #ead9b7;
+    --verde: #65766b;
+    --verde-claro: #e2e9e3;
+    --texto: #302a26;
+    --cinza: #746c66;
+    --borda: #e4ddd5;
+
+    --sombra: 0 15px 40px rgba(43, 33, 27, 0.10);
+    --sombra-leve: 0 8px 25px rgba(43, 33, 27, 0.08);
+
+    --raio: 22px;
+    --transicao: 0.3s ease;
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--creme);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+
+audio {
+    width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul,
+ol {
+    padding-left: 1.3rem;
+}
+
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--castanho);
+}
+
+
+h1 {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+}
+
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+/* =========================
+   ACESSIBILIDADE
+   ========================= */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--castanho);
+    color: var(--branco);
+    padding: 10px 15px;
+    z-index: 9999;
+    border-radius: 8px;
+}
+
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(247, 241, 232, 0.95);
+    border-bottom: 1px solid var(--borda);
+    backdrop-filter: blur(10px);
+}
+
+
+nav {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+header nav {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--castanho);
+}
+
+
+header nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+
+header nav > ul > li > a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 30px;
+    transition: var(--transicao);
+}
+
+
+header nav > ul > li > a:hover,
+header nav > ul > li > a.active {
+    background: var(--castanho);
+    color: var(--branco);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    width: min(1180px, 92%);
+    min-height: 650px;
+    margin: auto;
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--dourado-claro);
+    opacity: 0.35;
+    top: 80px;
+    right: 30%;
+    z-index: -1;
+}
+
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-text h1 span {
+    color: var(--dourado);
+}
+
+
+.hero-subtitulo {
+    font-size: 1.25rem;
+    margin: 25px 0 15px;
+    color: var(--castanho-2);
+}
+
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+
+.hero-imagem {
+    position: relative;
+    max-width: 430px;
+    margin: auto;
+}
+
+
+.hero-imagem img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 220px 220px 25px 25px;
+    box-shadow: var(--sombra);
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-imagem figcaption {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--cinza);
+}
+
+
+.circulo-decorativo {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--dourado);
+    top: -25px;
+    right: -25px;
+    z-index: 1;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.botao {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+
+.botao:hover {
+    transform: translateY(-3px);
+}
+
+
+.botao.principal {
+    background: var(--castanho);
+    color: var(--branco);
+}
+
+
+.botao.principal:hover {
+    background: var(--castanho-2);
+}
+
+
+.botao.secundario {
+    border-color: var(--castanho);
+    color: var(--castanho);
+}
+
+
+.botao.secundario:hover {
+    background: var(--dourado-claro);
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+.secao {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 75px 0;
+}
+
+
+.titulo-secao {
+    margin-bottom: 35px;
+}
+
+
+.titulo-secao h2 {
+    margin-top: 5px;
+}
+
+
+h2 + p {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   PÁGINA INTERNA
+   ========================= */
+
+.pagina-topo {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 80px 0 45px;
+}
+
+
+.pagina-topo p:last-child {
+    max-width: 700px;
+    color: var(--cinza);
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   CARTÕES
+   ========================= */
+
+.cartao {
+    background: var(--branco);
+    padding: 30px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-leve);
+}
+
+
+.cartao h2,
+.cartao h3 {
+    margin-bottom: 15px;
+}
+
+
+.cartao:hover {
+    transform: translateY(-4px);
+    transition: var(--transicao);
+}
+
+
+.bloco-verde {
+    background: var(--verde-claro);
+}
+
+
+/* =========================
+   SOBRE
+   ========================= */
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+.lista li {
+    margin-bottom: 8px;
+}
+
+
+.lista li::marker {
+    color: var(--dourado);
+}
+
+
+.lista-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+
+.lista-horizontal li {
+    margin: 0;
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+   ========================= */
+
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.estatistica {
+    background: var(--branco);
