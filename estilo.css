@@ -1,0 +1,1506 @@
+/* =========================================================
+   ESTILO PRINCIPAL
+   Projeto: Currículo Pessoal
+   ========================================================= */
+
+
+/* =========================
+   VARIÁVEIS
+   ========================= */
+
+:root {
+
+    --creme: #f7f1e8;
+    --branco: #ffffff;
+
+    --castanho: #2b211b;
+    --castanho-2: #49372b;
+
+    --dourado: #c8a66a;
+    --dourado-claro: #ead9b7;
+
+    --verde: #65766b;
+    --verde-claro: #e2e9e3;
+
+    --texto: #302a26;
+    --cinza: #746c66;
+
+    --borda: #e4ddd5;
+
+    --sombra:
+        0 15px 40px rgba(43, 33, 27, 0.10);
+
+    --sombra-leve:
+        0 8px 25px rgba(43, 33, 27, 0.08);
+
+    --raio: 18px;
+
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--creme);
+    color: var(--texto);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   ELEMENTOS GERAIS
+   ========================= */
+
+img {
+
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+a {
+
+    color: inherit;
+    text-decoration: none;
+
+}
+
+
+ul,
+ol {
+
+    padding-left: 1.4rem;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    line-height: 1.2;
+
+}
+
+
+h1 {
+
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+
+}
+
+
+h2 {
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+}
+
+
+h3 {
+
+    font-size: 1.25rem;
+
+}
+
+
+p {
+
+    color: var(--cinza);
+
+}
+
+
+/* =========================
+   ACESSIBILIDADE
+   ========================= */
+
+.skip-link {
+
+    position: absolute;
+
+    left: -9999px;
+    top: 10px;
+
+    background: var(--castanho);
+    color: var(--branco);
+
+    padding: 0.7rem 1rem;
+
+    z-index: 9999;
+
+}
+
+
+.skip-link:focus {
+
+    left: 10px;
+
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+/*
+position:
+static   = posição normal do elemento;
+relative = permite posicionar elementos relativamente a ele;
+absolute = posiciona relativamente ao ancestral posicionado;
+fixed    = fica preso ao ecrã;
+sticky   = acompanha o scroll até atingir a posição definida.
+
+Neste projeto usamos sticky no header.
+*/
+
+header {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(247, 241, 232, 0.94);
+
+    border-bottom:
+        1px solid var(--borda);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+header nav {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+}
+
+
+.logo {
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.08em;
+
+    color: var(--castanho);
+
+}
+
+
+header nav > ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 0.3rem;
+
+}
+
+
+header nav > ul > li > a {
+
+    display: block;
+
+    padding: 0.55rem 0.75rem;
+
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+header nav > ul > li > a:hover {
+
+    background: var(--dourado-claro);
+
+    color: var(--castanho);
+
+    transform: translateY(-2px);
+
+}
+
+
+header nav > ul > li > a:focus {
+
+    outline: 2px solid var(--dourado);
+
+    outline-offset: 3px;
+
+}
+
+
+header nav > ul > li > a.active {
+
+    background: var(--castanho);
+
+    color: var(--branco);
+
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    min-height: 75vh;
+
+    padding:
+        4rem 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    align-items: center;
+
+    gap: 3rem;
+
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--dourado-claro),
+            transparent
+        );
+
+    opacity: 0.4;
+
+    z-index: -1;
+
+}
+
+
+.hero-text {
+
+    animation:
+        entrada 0.8s ease both;
+
+}
+
+
+.etiqueta {
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--verde);
+
+}
+
+
+.hero-subtitulo {
+
+    font-size: 1.25rem;
+
+    max-width: 650px;
+
+    margin:
+        1rem 0;
+
+}
+
+
+.acoes {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+
+}
+
+
+.botao {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding:
+        0.8rem 1.3rem;
+
+    border-radius: 999px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-weight: bold;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.botao:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--sombra-leve);
+
+}
+
+
+.principal {
+
+    background: var(--castanho);
+
+    color: var(--branco);
+
+}
+
+
+.principal:hover {
+
+    background: var(--verde);
+
+}
+
+
+.secundario {
+
+    border-color: var(--dourado);
+
+    color: var(--castanho);
+
+}
+
+
+.secundario:hover {
+
+    background: var(--dourado-claro);
+
+}
+
+
+/* =========================
+   FOTO
+   ========================= */
+
+.hero-imagem {
+
+    position: relative;
+
+    max-width: 430px;
+
+    margin: auto;
+
+}
+
+
+.hero-imagem img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius:
+        45% 45% 20% 20%;
+
+    box-shadow: var(--sombra);
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.hero-imagem figcaption {
+
+    text-align: center;
+
+    margin-top: 0.7rem;
+
+    color: var(--cinza);
+
+    font-size: 0.85rem;
+
+}
+
+
+.circulo-decorativo {
+
+    position: absolute;
+
+    width: 80%;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: var(--dourado-claro);
+
+    top: -25px;
+    right: -25px;
+
+    z-index: 1;
+
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+.secao {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    padding:
+        4rem 0;
+
+}
+
+
+.titulo-secao {
+
+    margin-bottom: 2rem;
+
+}
+
+
+.titulo-secao h2 {
+
+    margin-top: 0.3rem;
+
+}
+
+
+h2 + p {
+
+    margin-top: 0.7rem;
+
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.cartao {
+
+    background: var(--branco);
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    padding: 1.5rem;
+
+    box-shadow: var(--sombra-leve);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.cartao:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.sobre-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+}
+
+
+.bloco-verde {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            #78897e
+        );
+
+    color: var(--branco);
+
+}
+
+
+.bloco-verde p,
+.bloco-verde li,
+.bloco-verde h2,
+.bloco-verde h3 {
+
+    color: var(--branco);
+
+}
+
+
+/* =========================
+   LISTAS
+   ========================= */
+
+.lista {
+
+    margin-top: 1rem;
+
+}
+
+
+.lista li {
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+.lista-horizontal {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.8rem;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.lista-horizontal li {
+
+    background: var(--verde-claro);
+
+    color: var(--castanho);
+
+    padding:
+        0.6rem 1rem;
+
+    border-radius: 999px;
+
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+   ========================= */
+
+.estatisticas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1rem;
+
+}
+
+
+.estatistica {
+
+    background: var(--branco);
+
+    border:
+        1px solid var(--borda);
+
+    padding: 1.5rem;
+
+    text-align: center;
+
+    border-radius: var(--raio);
+
+}
+
+
+.estatistica strong {
+
+    display: block;
+
+    font-size: 2.5rem;
+
+    color: var(--verde);
+
+}
+
+
+.estatistica span {
+
+    color: var(--cinza);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.85rem;
+
+}
+
+
+/* =========================
+   MULTIMÉDIA
+   ========================= */
+
+.multimedia-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap: 1.5rem;
+
+}
+
+
+video,
+audio {
+
+    width: 100%;
+
+}
+
+
+video {
+
+    border-radius: 14px;
+
+    margin:
+        1rem 0;
+
+    background: var(--castanho);
+
+}
+
+
+audio {
+
+    margin:
+        1.5rem 0;
+
+}
+
+
+/* =========================
+   PÁGINAS INTERNAS
+   ========================= */
+
+.pagina-topo {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    padding:
+        5rem 0 2rem;
+
+}
+
+
+.pagina-topo h1 {
+
+    font-size:
+        clamp(2.5rem, 6vw, 4.5rem);
+
+    max-width: 800px;
+
+}
+
+
+.pagina-topo p:last-child {
+
+    max-width: 700px;
+
+    margin-top: 1rem;
+
+}
+
+
+/* =========================
+   FOTO DO CV
+   ========================= */
+
+.foto-cv {
+
+    margin-top: 1.5rem;
+
+}
+
+
+.foto-cv img {
+
+    width: 100%;
+
+    max-width: 350px;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+}
+
+
+.foto-cv figcaption {
+
+    color: var(--cinza);
+
+    margin-top: 0.5rem;
+
+    font-size: 0.85rem;
+
+}
+
+
+/* =========================
+   CARDS 3
+   ========================= */
+
+.cards-3 {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1.5rem;
+
+}
+
+
+/* =========================
+   TABELA
+   ========================= */
+
+.tabela-container {
+
+    overflow-x: auto;
+
+    background: var(--branco);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra-leve);
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+
+}
+
+
+caption {
+
+    padding: 1rem;
+
+    text-align: left;
+
+    font-weight: bold;
+
+    color: var(--castanho);
+
+}
+
+
+th,
+td {
+
+    padding: 1rem;
+
+    border-bottom:
+        1px solid var(--borda);
+
+    text-align: left;
+
+}
+
+
+th {
+
+    background: var(--castanho);
+
+    color: var(--branco);
+
+}
+
+
+tbody tr:hover {
+
+    background: var(--verde-claro);
+
+}
+
+
+/* =========================
+   PORTFÓLIO
+   ========================= */
+
+.portfolio-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
+
+    gap: 1.5rem;
+
+}
+
+
+.projeto {
+
+    background: var(--branco);
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra-leve);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.projeto:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.projeto figure {
+
+    position: relative;
+
+}
+
+
+.projeto img {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+}
+
+
+.projeto figcaption {
+
+    position: absolute;
+
+    left: 12px;
+    bottom: 12px;
+
+    background:
+        rgba(43, 33, 27, 0.85);
+
+    color: var(--branco);
+
+    padding:
+        0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+
+}
+
+
+.projeto-conteudo {
+
+    padding: 1.5rem;
+
+}
+
+
+.numero {
+
+    color: var(--dourado);
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+}
+
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    list-style: none;
+
+    padding: 0;
+
+    margin-top: 1rem;
+
+}
+
+
+.tags li {
+
+    background: var(--verde-claro);
+
+    color: var(--verde);
+
+    padding:
+        0.3rem 0.65rem;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* =========================
+   HOBBIES
+   ========================= */
+
+.hobbies-grid {
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    gap: 1.5rem;
+
+}
+
+
+.hobby {
+
+    flex:
+        1 1 240px;
+
+    background: var(--branco);
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    padding: 1.7rem;
+
+    box-shadow: var(--sombra-leve);
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.hobby:hover {
+
+    transform: translateY(-7px);
+
+}
+
+
+.hobby-numero {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--dourado-claro);
+
+    color: var(--castanho);
+
+    font-weight: bold;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.citacao {
+
+    text-align: center;
+
+    padding: 3rem 1.5rem;
+
+}
+
+
+.citacao p {
+
+    color: var(--branco);
+
+    font-size: 1.5rem;
+
+    font-style: italic;
+
+}
+
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+.contacto-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 1.5rem;
+
+}
+
+
+.formulario {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+}
+
+
+fieldset {
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 14px;
+
+    padding: 1.2rem;
+
+}
+
+
+legend {
+
+    padding:
+        0 0.5rem;
+
+    font-weight: bold;
+
+    color: var(--castanho);
+
+}
+
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.45rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.campo:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+label {
+
+    font-weight: bold;
+
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius: 10px;
+
+    padding:
+        0.85rem 1rem;
+
+    background: #fffdf9;
+
+    color: var(--texto);
+
+    font:
+        inherit;
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: 2px solid var(--dourado);
+
+    border-color: var(--dourado);
+
+}
+
+
+/* Seletor de atributo */
+
+input[type="email"] {
+
+    background:
+        #fffaf0;
+
+}
+
+
+/* Estilização de radio/checkbox */
+
+.opcoes {
+
+    margin-top: 1rem;
+
+}
+
+
+.opcao {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    margin:
+        0.6rem 0;
+
+    font-weight: normal;
+
+}
+
+
+.opcao input {
+
+    width: auto;
+
+}
+
+
+small {
+
+    color: var(--cinza);
+
+}
+
+
+/* =========================
+   LINK
+   ========================= */
+
+.link-seta {
+
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    color: var(--verde);
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.link-seta:hover {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+
+    background: var(--castanho);
+
+    color: var(--branco);
+
+    margin-top: 3rem;
+
+    padding:
+        3rem 0 1rem;
+
+}
+
+
+.footer-grid {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2rem;
+
+}
+
+
+footer h2,
+footer h3 {
+
+    color: var(--branco);
+
+}
+
+
+footer p,
+footer li {
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+}
+
+
+footer ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+footer a {
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+footer a:hover {
+
+    color: var(--dourado-claro);
+
+}
+
+
+.copyright {
+
+    width: min(1120px, 92%);
+
+    margin:
+        2rem auto 0;
+
+    padding-top: 1rem;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    font-size: 0.85rem;
+
+}
+
+
+/* =========================
+   ANIMAÇÃO
+   ========================= */
+
+@keyframes entrada {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
