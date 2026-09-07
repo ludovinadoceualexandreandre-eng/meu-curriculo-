@@ -1,0 +1,227 @@
+/* =========================================================
+   RESPONSIVIDADE
+   Abordagem mobile-first
+   ========================================================= */
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (min-width: 601px) {
+
+    .hero {
+
+        grid-template-columns:
+            1.1fr 0.9fr;
+
+    }
+
+
+    .sobre-grid {
+
+        grid-template-columns:
+            1.2fr 0.8fr;
+
+    }
+
+
+    .multimedia-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================
+   TABLET / ECRÃ MÉDIO
+   ========================= */
+
+@media (min-width: 768px) {
+
+    header nav {
+
+        min-height: 82px;
+
+    }
+
+
+    .hero {
+
+        min-height: 80vh;
+
+        padding:
+            5rem 0;
+
+    }
+
+
+    .hero-text {
+
+        padding-right: 2rem;
+
+    }
+
+}
+
+
+/* =========================
+   TELEMÓVEL
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header nav {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding:
+            0.8rem 0;
+
+    }
+
+
+    header nav > ul {
+
+        width: 100%;
+
+        gap: 0.15rem;
+
+    }
+
+
+    header nav > ul > li > a {
+
+        font-size: 0.78rem;
+
+        padding:
+            0.45rem 0.55rem;
+
+    }
+
+
+    .hero {
+
+        padding:
+            3rem 0;
+
+        text-align: center;
+
+    }
+
+
+    .hero::before {
+
+        display: none;
+
+    }
+
+
+    .acoes {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-imagem {
+
+        width: min(90%, 350px);
+
+    }
+
+
+    .estatisticas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cards-3 {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .contacto-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .lista-horizontal {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* =========================
+   TELEMÓVEL PEQUENO
+   ========================= */
+
+@media (max-width: 400px) {
+
+    .pagina-topo {
+
+        padding-top:
+            3rem;
+
+    }
+
+
+    .secao {
+
+        padding:
+            2.8rem 0;
+
+    }
+
+
+    .botao {
+
+        width: 100%;
+
+    }
+
+
+    .acoes {
+
+        flex-direction: column;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+
+    header nav > ul {
+
+        justify-content: center;
+
+    }
+
+}
